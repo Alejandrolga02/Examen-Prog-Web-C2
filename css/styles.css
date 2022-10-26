@@ -1,0 +1,103 @@
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #dbfffa;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+header,
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10rem;
+	background-color: #30d99e;
+	color: black;
+	font-size: 2.4rem;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 2.2rem;
+}
+
+.contenedor {
+	min-height: calc(100vh - 20rem);
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 3rem 0;
+	flex-direction: column;
+}
+
+.registros {
+	min-height: 500px;
+}
+
+.inputs {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	gap: 1rem;
+}
+
+@media (max-width: 1400px) {
+	.inputs {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+@media (max-width: 1200px) {
+	.inputs {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (max-width: 800px) {
+	.inputs {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 560px) {
+	.inputs {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+
+label,
+input,
+select,
+option,
+button {
+	font-size: 1.5rem;
+	font-family: 'Open Sans', sans-serif;
+	padding: .4rem;
+	cursor: pointer;
+}
+
+button {
+	background-color: #30d99e;
+	color: black;
+	border: 1px solid gray;
+	border-radius: .3rem;
+}
+
+.talon {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}

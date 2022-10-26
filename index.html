@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Examen Corte 2</title>
+
+	<!-- Importar fuentes -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+	<!-- Importar estilos -->
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<header>CASA DE CAMBIO - CASH DOLLAR</header>
+
+	<main class="contenedor">
+		<div class="inputs">
+			<input type="text" id="cantidad" placeholder="Cantidad">
+			<select id="monedaOrigen">
+				<option value="0" disabled selected>Moneda Origen</option>
+				<option value="1">Dólar Estadounidense</option>
+				<option value="2">Dólar Canadiense</option>
+				<option value="3">Euro</option>
+				<option value="4">Peso Mexicano</option>
+			</select>
+			<select id="monedaDestino">
+				<option value="0" disabled selected>Moneda de origen</option>
+			</select>
+			<input type="text" id="subtotal" placeholder="Subtotal" readonly>
+			<input type="text" id="totalComision" placeholder="Total Comisión" readonly>
+			<input type="text" id="totalPagar" placeholder="Total a pagar" readonly>
+			<button id="calcular">Calcular</button>
+			<button id="registro">Registro</button>
+		</div>
+		<div class="contenido">
+			<h4>Registros realizados</h4>
+			<div class="registros">
+			</div>
+		</div>
+		<div class="talon">
+			<button id="borrar">Borrar Registro</button>
+			<label id="resultado">Total General</label>
+		</div>
+	</main>
+
+	<footer>ALEJANDRO IVAN LIZARRAGA ROJAS</footer>
+</body>
+
+</html>

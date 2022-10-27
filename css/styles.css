@@ -42,7 +42,7 @@ h4 {
 	flex-direction: column;
 }
 
-.registros {
+#contenido {
 	min-height: 500px;
 }
 
@@ -100,4 +100,8 @@ button {
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+}
+
+span {
+	margin-right: 1rem;
 }

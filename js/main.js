@@ -127,5 +127,56 @@ const calcular = () => {
 	document.getElementById("totalPagar").value = (resultado + (resultado * 0.03)).toFixed(2);
 }
 
+const registrar = () => {
+	if (document.getElementById('subtotal').value === "") {
+		calcular();
+	}
+
+	const informacion = {
+		'cantidad': document.getElementById('cantidad').value,
+		'origen': document.getElementById('monedaOrigen').value,
+		'destino': document.getElementById('monedaDestino').value,
+		'subtotal': document.getElementById('subtotal').value,
+		'comision': document.getElementById('totalComision').value,
+		'pagar': document.getElementById('totalPagar').value,
+		'totalSub': document.getElementById('totalSub').innerText,
+		'totalComi': document.getElementById('totalComi').innerText,
+		'totalPago': document.getElementById('totalPago').innerText,
+	};
+
+	const getMoneda = (id) => {
+		switch (id) {
+			case "1":
+				return "Dólar Estadounidense";
+
+			case "2":
+				return "Dólar Canadiense";
+
+			case "3":
+				return "Euro";
+
+			case "4":
+				return "Peso Mexicano";
+
+			default:
+				return null;
+		}
+	}
+
+	informacion.origen = getMoneda(informacion.origen);
+	informacion.destino = getMoneda(informacion.destino);
+
+	informacion.totalSub = parseFloat(informacion.totalSub) + parseFloat(informacion.subtotal).toFixed(2);
+	informacion.totalComi = parseFloat(informacion.totalComi) + parseFloat(informacion.comision).toFixed(2);
+	informacion.totalPago = parseFloat(informacion.totalPago) + parseFloat(informacion.pagar).toFixed(2);
+
+	document.getElementById('contenido').innerHTML += `<p>${informacion.cantidad}</p><p>${informacion.origen}</p><p>${informacion.destino}</p><p>${informacion.subtotal}</p><p>${informacion.comision}</p><p>${informacion.pagar}</p>`;
+
+	document.getElementById('totalSub').innerText = `${informacion.totalSub}`;
+	document.getElementById('totalComi').innerText = `${informacion.totalComi}`;
+	document.getElementById('totalPago').innerText = `${informacion.totalPago}`;
+}
+
 document.getElementById('monedaOrigen').addEventListener('change', fillComboBox);
-document.getElementById('calcular').addEventListener("click", calcular);
+document.getElementById('calcular').addEventListener('click', calcular);
+document.getElementById('registrar').addEventListener('click', registrar);

@@ -105,3 +105,9 @@ button {
 span {
 	margin-right: 1rem;
 }
+
+#contenido {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 1rem;
+}

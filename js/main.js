@@ -139,9 +139,9 @@ const registrar = () => {
 		'subtotal': document.getElementById('subtotal').value,
 		'comision': document.getElementById('totalComision').value,
 		'pagar': document.getElementById('totalPagar').value,
-		'totalSub': document.getElementById('totalSub').innerText,
-		'totalComi': document.getElementById('totalComi').innerText,
-		'totalPago': document.getElementById('totalPago').innerText,
+		'totalSub': parseFloat(document.getElementById('totalSub').innerText),
+		'totalComi': parseFloat(document.getElementById('totalComi').innerText),
+		'totalPago': parseFloat(document.getElementById('totalPago').innerText)
 	};
 
 	const getMoneda = (id) => {
@@ -166,9 +166,9 @@ const registrar = () => {
 	informacion.origen = getMoneda(informacion.origen);
 	informacion.destino = getMoneda(informacion.destino);
 
-	informacion.totalSub = parseFloat(informacion.totalSub) + parseFloat(informacion.subtotal).toFixed(2);
-	informacion.totalComi = parseFloat(informacion.totalComi) + parseFloat(informacion.comision).toFixed(2);
-	informacion.totalPago = parseFloat(informacion.totalPago) + parseFloat(informacion.pagar).toFixed(2);
+	informacion.totalSub += parseFloat(informacion.subtotal).toFixed(2);
+	informacion.totalComi += parseFloat(informacion.comision).toFixed(2);
+	informacion.totalPago += parseFloat(informacion.pagar).toFixed(2);
 
 	document.getElementById('contenido').innerHTML += `<p>${informacion.cantidad}</p><p>${informacion.origen}</p><p>${informacion.destino}</p><p>${informacion.subtotal}</p><p>${informacion.comision}</p><p>${informacion.pagar}</p>`;
 
@@ -178,7 +178,7 @@ const registrar = () => {
 }
 
 const borrar = () => {
-	document.getElementById("contenido").innerHTML = "<h4>Registros realizados</h4>";
+	document.getElementById("contenido").innerHTML = "";
 	document.getElementById("resultado").innerHTML = `Total General: $<span id="totalSub">0.00</span>$<span id="totalComi">0.00</span>$<span id="totalPago">0.00</span>`;
 }
 

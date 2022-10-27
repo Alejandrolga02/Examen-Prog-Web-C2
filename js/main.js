@@ -177,6 +177,12 @@ const registrar = () => {
 	document.getElementById('totalPago').innerText = `${informacion.totalPago}`;
 }
 
+const borrar = () => {
+	document.getElementById("contenido").innerHTML = "<h4>Registros realizados</h4>";
+	document.getElementById("resultado").innerHTML = `Total General: $<span id="totalSub">0.00</span>$<span id="totalComi">0.00</span>$<span id="totalPago">0.00</span>`;
+}
+
 document.getElementById('monedaOrigen').addEventListener('change', fillComboBox);
 document.getElementById('calcular').addEventListener('click', calcular);
 document.getElementById('registrar').addEventListener('click', registrar);
+document.getElementById('borrar').addEventListener('click', borrar);
